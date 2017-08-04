@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
   
   let(:my_post) { Post.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph) }
+  
 
   describe "GET #index" do
     it "returns http success" do
@@ -36,7 +37,7 @@ RSpec.describe PostsController, type: :controller do
       get :new
       expect(response).to have_http_status(:success)
     end
-  end
+  
   
   it "renders the #new view" do
         get :new
@@ -50,9 +51,9 @@ RSpec.describe PostsController, type: :controller do
       end
     end
  
-    describe "POST create" do
+    describe "Post create" do
  # #4
-      it "increases the number of Post by 1" do
+      it "increases number of post by 1" do
         expect{post :create, post: {title: RandomData.random_sentence, body: RandomData.random_paragraph}}.to change(Post,:count).by(1)
       end
  
@@ -120,16 +121,16 @@ RSpec.describe PostsController, type: :controller do
    describe "DELETE destroy" do
      it "deletes the post" do
        delete :destroy, {id: my_post.id}
- # #6
+
        count = Post.where({id: my_post.id}).size
        expect(count).to eq 0
      end
  
      it "redirects to posts index" do
        delete :destroy, {id: my_post.id}
- # #7
        expect(response).to redirect_to posts_path
      end
    end
 
 
+end
