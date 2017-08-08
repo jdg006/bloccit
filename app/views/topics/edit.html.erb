@@ -21,8 +21,8 @@
        </div>
        <div class="form-group">
 
-         <%= f.label :public, class: 'checkbox' do %>
-           <%= f.check_box :public %> Public topic
+         <%= f.label :price, class: 'form_control' do %>
+           $<%= f.number_field :price %> 
          <% end %>
        </div>
        <%= f.submit "Save", class: 'btn btn-success' %>

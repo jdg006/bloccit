@@ -8,7 +8,8 @@ class TopicsController < ApplicationController
     end
     
     def new
-     @topic = Topic.new
+        @topic = Topic.new
+        
    end
    
    def create
@@ -57,6 +58,4 @@ class TopicsController < ApplicationController
      end
    end
    
-   
-
 end
