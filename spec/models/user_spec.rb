@@ -36,4 +36,12 @@ RSpec.describe User, type: :model do
      end
  
    end
+   
+   describe "name save assignment" do
+       let(:user_name) {User.create!(name: "joe gallagher", email: "user@.com", password: "password")}
+       it"should capitalize the first and last name of the user" do
+           user_name.save
+           expect(user_name.name).to eq("Joe Gallagher")
+       end
+   end
 end
