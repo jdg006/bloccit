@@ -45,7 +45,8 @@ require 'random_data'
  User.first.update_attributes!(
    name: "Joe Gallagher",
    email: "jdg006@lvc.edu",
-   password: 'password'
+   password: 'password',
+   role: 'moderator'
  )
  
  admin = User.create!(
@@ -58,7 +59,7 @@ require 'random_data'
  member = User.create!(
    name:     'Member User',
    email:    'member@example.com',
-   password: 'helloworld'
+   password: 'helloworld',
  )
 
  puts "Seed finished"
