@@ -42,9 +42,22 @@ require 'random_data'
    )
  end
  
- user = User.first
- user.update_attributes!(
+ User.first.update_attributes!(
+   name: "Joe Gallagher",
    email: "jdg006@lvc.edu",
+   password: 'password'
+ )
+ 
+ admin = User.create!(
+   name:     'Admin User',
+   email:    'admin@example.com',
+   password: 'helloworld',
+   role:     'admin'
+ )
+ 
+ member = User.create!(
+   name:     'Member User',
+   email:    'member@example.com',
    password: 'helloworld'
  )
 
