@@ -33,3 +33,5 @@ source 'https://rubygems.org'
  gem 'turbolinks'
  
  gem 'bcrypt'
+ 
+ gem 'figaro', '1.0'
